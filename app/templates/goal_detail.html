@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<title>todo app</title>
+<head></head>
+<body>
+<h1> todo app</h1>
+<p><b>objective:</b> {{goals.objective}}<br> <b>result:</b> {{goals.key_result}}<br> <b>completion date:</b> {{goals.end_date}} <br> <b>status:</b> {{goals.completed}} </p><br>
+<button><a href="{% url 'update' goals.pk%}">update</a></button>
+<button><a>delete</a></button>
+
+</body>
+</html>

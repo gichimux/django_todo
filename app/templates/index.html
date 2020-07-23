@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<title>todo app</title>
+<head></head>
+<body>
+<div style=" margin: auto;">
+<h1> todo app</h1>
+{% for goal in goals %}
+<p><b>objective:</b> {{goal.objective}}<br> <b>result:</b> {{goal.key_result}}<br> <b>completion date:</b> {{goal.end_date}} <br> <b>status:</b> {{goal.completed}} </p><br>
+<button><a href="{% url 'update' goal.pk%}">update</a></button>
+<button><a href="{% url 'delete' goal.pk%}">delete</a></button>
+<button><a href="{% url 'goal_detail' goal.pk %}">details</a></button>
+{% endfor %}
+</div>
+<div style="height: 50px"></div>
+<button><a  href="{% url 'add_goal' %}">add goal</a></button>
+</body>
+</html>

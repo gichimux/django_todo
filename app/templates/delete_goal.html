@@ -1,0 +1,32 @@
+{% load bootstrap3 %} 
+{% comment %} {% load staticfiles %} {% endcomment %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>delete goal</title>
+  {{form.media}}
+
+{% block styles %} {% bootstrap_css %}
+  {% comment %} <link rel="stylesheet" href="{% static 'css/news.css' %}"> {% endblock %} {% endcomment %}
+{% endblock%}
+</head>
+ 
+<body>
+<div style="width: 50%; margin:auto;">
+  <form  action="{%url 'delete' goal.pk%}" method="POST">
+    {%csrf_token%}
+    <h1>DO you want to delete the "{{goal.objective}}"</h1>
+    <p><input type="submit" class="btn btn-success btn-lg" value="Yes"><a href="{% url 'index'%}">Cancel</a></p>
+  </form>
+</div>
+   {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %} {% endblock %}
+
+</body>
+
+</html>
